@@ -1,0 +1,19 @@
+.active-list{
+    margin-top: 5%;
+    text-align: center;
+}
+.active-list-title{
+    margin-bottom: 3%;
+}
+.active-list-body{
+    text-align: left;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.active-list-body-button{
+    text-align: right;
+}
+.active-list-body .btn {
+    max-height: 50px;
+}
