@@ -36,3 +36,7 @@ interface CheckCarAction {
 }
 
 export type CarAction = AddCarAction | CheckCarAction;
+
+export type CarsTableProps = {
+  cars: Client[];
+};

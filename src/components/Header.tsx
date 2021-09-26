@@ -12,12 +12,7 @@ const Header: React.FC = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <a className="nav-link" href="/activeList">
-                  Машины в очереди
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/inactiveList">
-                  Машины, прошедшие ТО
+                  Список заказов
                 </a>
               </li>
             </ul>

@@ -5,12 +5,10 @@ import {
   Client,
   CHECK_CAR,
 } from "../../types/car";
-
-const vitalya = new Client(1, "Виталик", "mazda", "123456789", false);
-const misha = new Client(2, "Миша", "ferrari", "890456789", true);
+import { client1, client2, client3, client4 } from "../../models/models";
 
 const initialState: CarState = {
-  cars: [vitalya, misha],
+  cars: [client1, client2, client3, client4], //  initial state with 4 clients just for example
 };
 
 export const carReducer = (

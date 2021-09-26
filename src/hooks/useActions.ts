@@ -3,5 +3,4 @@ import { bindActionCreators } from "redux";
 
 export const useActions = () => {
     const dispatch = useDispatch();
-    
 }

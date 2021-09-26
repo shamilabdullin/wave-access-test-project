@@ -16,15 +16,9 @@ const MainPage: React.FC = () => {
       <div className="main-page-body">
         <div className="main-page-body-item">
           <h5>
-            Чтобы просмотреть машины, непрошедшие техосмотр или добавить машину
-            в очередь, перейдите в&nbsp;
-            <a href="/activeList">активный список</a>
-          </h5>
-        </div>
-        <div className="main-page-body-item">
-          <h5>
-            Для того, чтобы просмотреть машины, прошедшие техосмотр, перейдите
-            на <a href="/inactiveList">эту</a> страницу&nbsp;
+            Чтобы контролировать прохождение клиентами техобслуживания,
+            перейдите в&nbsp;
+            <a href="/activeList">списки заказов</a>
           </h5>
         </div>
       </div>

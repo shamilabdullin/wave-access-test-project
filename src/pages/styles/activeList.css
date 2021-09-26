@@ -3,15 +3,32 @@
     text-align: center;
 }
 .active-list-title{
-    margin-bottom: 3%;
+    margin-bottom: 10%;
+    text-align: center;
+}
+.active-list-title h2{
+    text-align: center;
 }
 .active-list-body{
-    text-align: left;
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
+.active-list-body-elements-1{
+    flex-grow: 3;
+}
+.active-list-body-elements-2{
+    flex-grow: 3;
+}
+.active-list-body-orders{
+    text-align: start;
+    margin-top: 4%;
+}
+.active-list-body-empty-orders{
+    text-align: center;
+}
 .active-list-body-button{
+    flex-grow: 0.1;
     text-align: right;
 }
 .active-list-body .btn {
