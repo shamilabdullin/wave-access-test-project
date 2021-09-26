@@ -15,11 +15,11 @@ const MainPage: React.FC = () => {
       </div>
       <div className="main-page-body">
         <div className="main-page-body-item">
-          <h5>
+          <h3>
             Чтобы контролировать прохождение клиентами техобслуживания,
             перейдите в&nbsp;
             <a href="/activeList">списки заказов</a>
-          </h5>
+          </h3>
         </div>
       </div>
     </div>

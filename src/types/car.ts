@@ -1,3 +1,5 @@
+import React from "react";
+
 export class Client {
   constructor(
     id: number,
@@ -39,4 +41,10 @@ export type CarAction = AddCarAction | CheckCarAction;
 
 export type CarsTableProps = {
   cars: Client[];
+};
+export type PopupProps = {
+  handleShow: () => void;
+  handleClose: () => void;
+  show: boolean;
+  handleSubmit: (event: React.FormEvent) => void;
 };

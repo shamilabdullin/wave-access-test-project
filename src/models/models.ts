@@ -25,7 +25,7 @@ export const client3 = new Client(
 export const client4 = new Client(
   4,
   "Анна Каренина",
-  "ferrari",
+  "toyota corolla",
   "89170361526",
   true
 );

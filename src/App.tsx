@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import ActiveList from "./pages/ActiveList";
 import InactiveList from "./pages/InactiveList";
 import MainPage from "./pages/MainPage";
+import { NotFound } from "./pages/NotFound";
 
 const App: React.FC = () => {
   return (
@@ -21,6 +22,10 @@ const App: React.FC = () => {
         <Route path="/inactiveList" exact>
           <Header />
           <InactiveList />
+        </Route>
+        <Route>
+          <Header />
+          <NotFound />
         </Route>
       </Switch>
     </BrowserRouter>

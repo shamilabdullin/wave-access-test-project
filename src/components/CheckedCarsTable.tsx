@@ -1,14 +1,30 @@
 import React from "react";
+import { Table } from "react-bootstrap";
 import { CarsTableProps } from "../types/car";
 
 export const CheckedCarsTable: React.FC<CarsTableProps> = ({ cars }) => {
   return (
     <div className="active-list-body-orders">
-      {cars.map((car) => (
-        <h4 key={car.id}>
-          {car.id} {car.name} {car.carModel} {car.phone}
-        </h4>
-      ))}
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>ФИО</th>
+            <th>Модель машины</th>
+            <th>Номер телефона</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cars.map((car) => (
+            <tr key={car.id}>
+              <td>{car.id}</td>
+              <td>{car.name}</td>
+              <td>{car.carModel}</td>
+              <td>{car.phone}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 };
