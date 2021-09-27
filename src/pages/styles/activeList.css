@@ -33,6 +33,9 @@
 .active-list-body-empty-orders{
     text-align: center;
 }
+.inactive-list-body-empty-orders{
+    text-align: center;
+}
 .active-list-body-button{
     flex-grow: 0.1;
     text-align: right;

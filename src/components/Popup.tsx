@@ -23,15 +23,15 @@ export const Popup: React.FC<PopupProps> = ({
             <Row>
               <Col>
                 <Form onSubmit={handleSubmit}>
-                  <Form.Group controlId="">
+                  <Form.Group controlId="" className="mb-3">
                     <Form.Label>Введите ваши имя и фамилию</Form.Label>
                     <Form.Control type="text" name="name" />
                   </Form.Group>
-                  <Form.Group controlId="">
+                  <Form.Group controlId="" className="mb-3">
                     <Form.Label>Введите марку вашего автомобиля</Form.Label>
                     <Form.Control type="text" name="carModel" />
                   </Form.Group>
-                  <Form.Group controlId="">
+                  <Form.Group controlId="" className="mb-3">
                     <Form.Label>Введите ваш номер телефона</Form.Label>
                     <Form.Control type="text" name="phone" />
                   </Form.Group>

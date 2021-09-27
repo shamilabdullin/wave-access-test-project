@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { useActions } from "../hooks/useActions";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import { Client } from "../types/car";
 import { Popup } from "./Popup";
 
 const AddCarModal: React.FC = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
   const { addCar } = useActions();
+  const { showPopup } = useActions();
+  const { closePopup } = useActions();
   const { cars } = useTypedSelector((state) => state.car);
-  const id: number = cars[cars.length - 1].id + 1;
+  const { show } = useTypedSelector((state) => state.popup);
+  let id = 0;
+  if (cars.length) {
+    id = cars[cars.length - 1].id + 1;
+  }
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -26,8 +29,8 @@ const AddCarModal: React.FC = () => {
 
   return (
     <Popup
-      handleClose={handleClose}
-      handleShow={handleShow}
+      handleClose={closePopup}
+      handleShow={showPopup}
       show={show}
       handleSubmit={handleSubmit}
     />
