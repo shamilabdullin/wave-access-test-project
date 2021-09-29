@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import ActiveList from "./pages/ActiveList";
-import InactiveList from "./pages/InactiveList";
 import MainPage from "./pages/MainPage";
 import { NotFound } from "./pages/NotFound";
 
@@ -18,10 +17,6 @@ const App: React.FC = () => {
         <Route path="/activeList" exact>
           <Header />
           <ActiveList />
-        </Route>
-        <Route path="/inactiveList" exact>
-          <Header />
-          <InactiveList />
         </Route>
         <Route>
           <Header />

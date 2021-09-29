@@ -15,10 +15,10 @@ export const popupReducer = (
 ): PopupState => {
   switch (action.type) {
     case SHOW_POPUP:
-      return { ...state, show: true };
+      return { show: true };
 
     case CLOSE_POPUP:
-      return { ...state, show: false };
+      return { show: false };
 
     default:
       return state;

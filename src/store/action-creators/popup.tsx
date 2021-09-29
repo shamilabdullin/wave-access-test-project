@@ -1,11 +1,11 @@
-import { CLOSE_POPUP, SHOW_POPUP } from "../../types/popup";
+import { CLOSE_POPUP, PopupAction, SHOW_POPUP } from "../../types/popup";
 
-export function showPopup() {
+export function showPopup(): PopupAction {
   return {
     type: SHOW_POPUP,
   };
 }
-export function closePopup() {
+export function closePopup(): PopupAction {
   return {
     type: CLOSE_POPUP,
   };

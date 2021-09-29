@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
-import { carReducer } from "./carReducer";
+import { formReducer } from "./formReducer";
+import { orderReducer } from "./orderReducer";
 import { popupReducer } from "./popupReducer";
 
 export const rootReducer = combineReducers({
-  car: carReducer,
+  order: orderReducer,
   popup: popupReducer,
+  form: formReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

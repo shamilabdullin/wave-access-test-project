@@ -1,15 +1,14 @@
 import React from "react";
 import { Button, Table } from "react-bootstrap";
 import { useActions } from "../hooks/useActions";
-//  import { useTypedSelector } from "../hooks/useTypedSelector";
-import { CarsTableProps } from "../types/car";
-import { Client } from "../types/car";
+import { OrderTableProps } from "../types/propTypes";
+import { Order } from "../types/order";
 
-export const UncheckedCarsTable: React.FC<CarsTableProps> = ({ cars }) => {
-  const { checkCar } = useActions();
+export const UncheckedOrdersTable: React.FC<OrderTableProps> = ({ orders }) => {
+  const { checkOrder } = useActions();
   return (
     <div className="active-list-body-orders">
-      {cars.length !== 0 ? (
+      {orders.length !== 0 ? (
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -21,24 +20,25 @@ export const UncheckedCarsTable: React.FC<CarsTableProps> = ({ cars }) => {
             </tr>
           </thead>
           <tbody>
-            {cars.map((car) => (
-              <tr key={car.id}>
-                <td>{car.id}</td>
-                <td>{car.name}</td>
-                <td>{car.carModel}</td>
-                <td>{car.phone}</td>
+            {orders.map((order) => (
+              <tr key={order.id}>
+                <td>{order.id}</td>
+                <td>{order.clientName}</td>
+                <td>{order.carModel}</td>
+                <td>{order.phone}</td>
                 <td>
                   <Button
                     variant="primary"
                     onClick={() => {
-                      checkCar(car.id);
+                      checkOrder(order.id);
                       const orders = JSON.parse(
-                        localStorage.getItem("cars") || "[]"
-                      ) as Client[];
-                      const order = orders![car.id];
-                      order.checked = true;
-                      const newOrders = [...orders];
-                      localStorage.setItem("cars", JSON.stringify(newOrders));
+                        localStorage.getItem("orders") || "[]"
+                      ) as Order[];
+                      const newOrder = orders[order.id];
+                      orders.splice(order.id);
+                      newOrder.checked = true;
+                      const newOrders = [...orders, newOrder];
+                      localStorage.setItem("orders", JSON.stringify(newOrders));
                     }}
                   >
                     Добавить
