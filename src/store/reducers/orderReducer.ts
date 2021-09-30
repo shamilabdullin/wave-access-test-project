@@ -7,7 +7,9 @@ import {
 } from "../../types/order";
 
 const initialState: OrderState = {
-  orders: [],
+  orders: localStorage.getItem("orders")
+    ? (JSON.parse(localStorage.getItem("orders") || "[]") as Order[])
+    : [],
 };
 
 export const orderReducer = (
@@ -20,9 +22,7 @@ export const orderReducer = (
 
     case CHECK_ORDER:
       const order = state.orders.find((order) => order.id === action.payload);
-      if (order instanceof Order) {
-        order.checked = true;
-      }
+      order!.checked = true;
       return { orders: state.orders };
 
     default:
