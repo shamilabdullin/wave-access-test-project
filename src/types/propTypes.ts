@@ -22,4 +22,7 @@ export type FormGroupProps = {
   title: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   name: string;
+  value: any;
+  placeholder: string;
+  valueValid: any;
 }

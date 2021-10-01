@@ -2,7 +2,7 @@ import React from "react";
 import { useActions } from "../hooks/useActions";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import { Order } from "../types/order";
-import { Popup } from "./Popup";
+import { Popup } from "./AddOrderView";
 
 const AddOrderModal: React.FC = () => {
   const { addOrder, showPopup, closePopup } = useActions();
@@ -36,14 +36,6 @@ const AddOrderModal: React.FC = () => {
       invalidName();
       invalidCar();
       invalidPhone();
-    } else if (nameValid === false) {
-      window.alert("Введите ваше имя корректно");
-    }
-    if (carValid === false) {
-      window.alert("Введите модель вашей машины корректно");
-    }
-    if (phoneValid === false) {
-      window.alert("Введите ваш номер телефона корректно");
     }
   };
 

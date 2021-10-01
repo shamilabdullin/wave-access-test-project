@@ -30,3 +30,21 @@ export function invalidPhone(): FormAction {
     type: FormActionTypes.PHONE_INVALID,
   };
 }
+export function setNameValue(name: string): FormAction {
+  return {
+    type: FormActionTypes.NAME_VALUE,
+    payload: name,
+  };
+}
+export function setCarValue(car: string): FormAction {
+  return {
+    type: FormActionTypes.CAR_VALUE,
+    payload: car,
+  };
+}
+export function setPhoneValue(phone: string): FormAction {
+  return {
+    type: FormActionTypes.PHONE_VALUE,
+    payload: phone,
+  };
+}

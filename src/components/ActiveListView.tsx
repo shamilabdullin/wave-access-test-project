@@ -1,6 +1,6 @@
 import React from "react";
 import { ActiveListViewProps } from "../types/propTypes";
-import AddOrderModal from "./AddOrderModal";
+import AddOrderModal from "./AddOrder";
 import { CheckedOrdersTable } from "./CheckedOrdersTable";
 import { UncheckedOrdersTable } from "./UncheckedOrdersTable";
 

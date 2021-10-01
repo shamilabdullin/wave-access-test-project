@@ -2,11 +2,6 @@ import React, { ChangeEvent } from "react";
 import { Modal, Button, Row, Col, Form } from "react-bootstrap";
 import { useActions } from "../hooks/useActions";
 import { useTypedSelector } from "../hooks/useTypedSelector";
-import {
-  invalidCar,
-  invalidName,
-  invalidPhone,
-} from "../store/action-creators/form";
 import { PopupProps } from "../types/propTypes";
 import { PopupFormGroup } from "./PopupFormGroup";
 
@@ -19,21 +14,26 @@ export const Popup: React.FC<PopupProps> = ({
   const { nameValid, carValid, phoneValid } = useTypedSelector(
     (state) => state.form
   );
+  const { nameValue, carValue, phoneValue } = useTypedSelector(
+    (state) => state.form
+  );
   const { validCar, validName, validPhone } = useActions();
+  const { invalidCar, invalidName, invalidPhone } = useActions();
   const handleNameInput = (e: ChangeEvent<HTMLInputElement>) => {
     const target: HTMLInputElement = e.currentTarget as HTMLInputElement;
     const name: string = target.value;
-    name !== "" || name.length < 20 ? validName() : invalidName();
+    name == "" || name.length > 20 ? invalidName() : validName();
   };
   const handleCarModelInput = (e: ChangeEvent<HTMLInputElement>) => {
     const target: HTMLInputElement = e.currentTarget as HTMLInputElement;
     const carModel: string = target.value;
-    carModel !== "" || carModel.length < 20 ? validCar() : invalidCar();
+    carModel == "" || carModel.length > 20 ? invalidCar() : validCar();
   };
   const handlePhoneInput = (e: ChangeEvent<HTMLInputElement>) => {
     const target: HTMLInputElement = e.currentTarget as HTMLInputElement;
     const phone: string = target.value;
-    phone.length > 6 ?? phone.length < 13 ? validPhone() : invalidPhone();
+    const reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+    reg.test(phone) ? validPhone() : invalidPhone();
   };
   return (
     <>
@@ -54,16 +54,25 @@ export const Popup: React.FC<PopupProps> = ({
                     title={"Введите ваше ФИО"}
                     onChange={handleNameInput}
                     name="name"
+                    value={nameValue}
+                    placeholder="Введите ФИО"
+                    valueValid={nameValid}
                   />
                   <PopupFormGroup
                     title={"Введите марку вашего автомобиля"}
                     onChange={handleCarModelInput}
                     name="carModel"
+                    value={carValue}
+                    placeholder="Введите марку автомобиля"
+                    valueValid={carValid}
                   />
                   <PopupFormGroup
                     title={"Введите ваш номер телефона"}
                     onChange={handlePhoneInput}
                     name="phone"
+                    value={phoneValue}
+                    placeholder="Введите номер телефона"
+                    valueValid={phoneValid}
                   />
                   <Form.Group controlId="">
                     <Button

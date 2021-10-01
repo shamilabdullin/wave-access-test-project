@@ -6,11 +6,23 @@ export const PopupFormGroup: React.FC<FormGroupProps> = ({
   title,
   onChange,
   name,
+  placeholder,
+  valueValid,
 }) => {
   return (
-    <Form.Group controlId="" className="mb-3">
-      <Form.Label>{title}</Form.Label>
-      <Form.Control type="text" name={name} onChange={onChange} />
-    </Form.Group>
+    <div className="popup-form-group mb-3">
+      <Form.Group controlId="">
+        <Form.Label>{title}</Form.Label>
+        <Form.Control
+          type="text"
+          name={name}
+          onChange={onChange}
+          placeholder={placeholder}
+        />
+      </Form.Group>
+      {!valueValid && (
+        <div style={{ color: "red" }}>Введите корректные данные</div>
+      )}
+    </div>
   );
 };
