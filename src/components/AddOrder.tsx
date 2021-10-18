@@ -2,7 +2,7 @@ import React from "react";
 import { useActions } from "../hooks/useActions";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import { Order } from "../types/order";
-import { Popup } from "./AddOrderView";
+import { AddOrderView } from "./AddOrderView";
 
 const AddOrderModal: React.FC = () => {
   const { addOrder, showPopup, closePopup } = useActions();
@@ -40,7 +40,7 @@ const AddOrderModal: React.FC = () => {
   };
 
   return (
-    <Popup
+    <AddOrderView
       handleClose={closePopup}
       handleShow={showPopup}
       show={show}

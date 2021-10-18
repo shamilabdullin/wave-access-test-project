@@ -5,7 +5,7 @@ import { useTypedSelector } from "../hooks/useTypedSelector";
 import { PopupProps } from "../types/propTypes";
 import { PopupFormGroup } from "./PopupFormGroup";
 
-export const Popup: React.FC<PopupProps> = ({
+export const AddOrderView: React.FC<PopupProps> = ({
   handleShow,
   handleClose,
   show,

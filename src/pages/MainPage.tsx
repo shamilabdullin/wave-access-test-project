@@ -1,25 +1,31 @@
 import React from "react";
+import { Trans, useTranslation } from "react-i18next";
 import "./styles/mainPage.css";
+import "../i18next";
+import { Button } from "react-bootstrap";
 
 const MainPage: React.FC = () => {
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (language: string) => {
+    i18n.changeLanguage(language);
+  };
   return (
     <div className="container main-page">
       <div className="main-page-title">
-        <h1>Добро пожаловать на сайт Perfect Car</h1>
+        <h1>{t("title")}</h1>
       </div>
       <div className="main-page-description">
-        <h2>
-          Здесь вы сможете контролировать процесс прохождения машинами
-          техосмотра
-        </h2>
+        <h2>{t("second title")}</h2>
       </div>
       <div className="main-page-body">
         <div className="main-page-body-item">
           <h3>
-            Чтобы контролировать прохождение клиентами техобслуживания,
-            перейдите в&nbsp;
-            <a href="/activeList">списки заказов</a>
+            {t("third title")}&nbsp;
+            <a href="/activeList">{t("list of orders")}</a>
           </h3>
+          <Trans i18nKey="description.part1"></Trans>
+          <Button onClick={() => changeLanguage("en")}>EN</Button>
+          <Button onClick={() => changeLanguage("ru")}>RU</Button>
         </div>
       </div>
     </div>
