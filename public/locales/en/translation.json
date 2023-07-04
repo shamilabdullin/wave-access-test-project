@@ -6,5 +6,20 @@
     },
     "second title": "You can control your app here",
     "third title": "To control your orders follow this link",
-    "list of orders": "list of orders"
+    "list of orders": "list of orders",
+	"active orders": "Active orders",
+	"finished orders": "Finished orders",
+	"no active orders": "No active orders",
+	"add car": "Add car",
+	"add a car to the queue": "Add a car to the queue",
+	"add": "Add",
+	"close": "Close",
+	"enter your bio": "Enter your bio",
+	"enter brand of your car": "Enter brand of your car",
+	"enter phone": "Enter phone",
+	"enter correct data": "Enter correct data",
+	"bio": "BIO",
+	"car model": "Car model",
+	"phone": "Phone",
+	"passed": "Passed"
 }

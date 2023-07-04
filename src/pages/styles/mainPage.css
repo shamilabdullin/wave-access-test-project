@@ -20,10 +20,10 @@ body{
     font-weight: 500;
 }
 .main-page-description{
-    margin-top: 50px;
+    margin-top: 40px;
 }
 .main-page-body{
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .main-page-body-item{
     margin-top: 20px;
@@ -38,4 +38,7 @@ body{
     color: black;
     -webkit-text-stroke: .025em #4b5;
     transition: 0.5s;
+}
+.change_language {
+	display: flex;
 }

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Form } from "react-bootstrap";
 import { FormGroupProps } from "../types/propTypes";
+import { useTranslation } from "react-i18next";
 
 export const PopupFormGroup: React.FC<FormGroupProps> = ({
   title,
@@ -9,6 +10,11 @@ export const PopupFormGroup: React.FC<FormGroupProps> = ({
   placeholder,
   valueValid,
 }) => {
+
+	const { t } = useTranslation();
+	const inputRef = useRef<HTMLInputElement>(null)
+	console.log(inputRef.current?.value)
+
   return (
     <div className="popup-form-group mb-3">
       <Form.Group controlId="">
@@ -18,10 +24,11 @@ export const PopupFormGroup: React.FC<FormGroupProps> = ({
           name={name}
           onChange={onChange}
           placeholder={placeholder}
+		  ref={inputRef}
         />
       </Form.Group>
-      {!valueValid && (
-        <div style={{ color: "red" }}>Введите корректные данные</div>
+      {!valueValid  && inputRef.current?.value !== undefined && (
+        <div style={{ color: "red" }}>{t("enter correct data")}</div>
       )}
     </div>
   );

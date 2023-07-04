@@ -3,9 +3,13 @@ import { Button, Table } from "react-bootstrap";
 import { useActions } from "../hooks/useActions";
 import { OrderTableProps } from "../types/propTypes";
 import { Order } from "../types/order";
+import { useTranslation } from "react-i18next";
 
 export const UncheckedOrdersTable: React.FC<OrderTableProps> = ({ orders }) => {
+
   const { checkOrder } = useActions();
+  const { t } = useTranslation();
+
   return (
     <div className="active-list-body-orders">
       {orders.length !== 0 ? (
@@ -13,10 +17,10 @@ export const UncheckedOrdersTable: React.FC<OrderTableProps> = ({ orders }) => {
           <thead>
             <tr>
               <th>id</th>
-              <th>ФИО</th>
-              <th>Модель машины</th>
-              <th>Номер телефона</th>
-              <th>Прошел ТО</th>
+              <th>{t("bio")}</th>
+              <th>{t("car model")}</th>
+              <th>{t("phone")}</th>
+              <th>{t("passed")}</th>
             </tr>
           </thead>
           <tbody>
@@ -41,7 +45,7 @@ export const UncheckedOrdersTable: React.FC<OrderTableProps> = ({ orders }) => {
                       localStorage.setItem("orders", JSON.stringify(newOrders));
                     }}
                   >
-                    Добавить
+                    {t("add")}
                   </Button>
                 </td>
               </tr>
@@ -51,7 +55,7 @@ export const UncheckedOrdersTable: React.FC<OrderTableProps> = ({ orders }) => {
       ) : (
         <div>
           <h4 className="active-list-body-empty-orders">
-            активных заказов нет
+            {t("no active orders")}
           </h4>
         </div>
       )}

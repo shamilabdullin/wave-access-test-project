@@ -1,8 +1,12 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import { OrderTableProps } from "../types/propTypes";
+import { useTranslation } from "react-i18next";
 
 export const CheckedOrdersTable: React.FC<OrderTableProps> = ({ orders }) => {
+
+	const { t } = useTranslation();
+
   return (
     <div className="active-list-body-orders">
       {orders.length !== 0 ? (
@@ -10,9 +14,9 @@ export const CheckedOrdersTable: React.FC<OrderTableProps> = ({ orders }) => {
           <thead>
             <tr>
               <th>id</th>
-              <th>ФИО</th>
-              <th>Модель машины</th>
-              <th>Номер телефона</th>
+              <th>{t("bio")}</th>
+              <th>{t("car model")}</th>
+              <th>{t("phone")}</th>
             </tr>
           </thead>
           <tbody>
